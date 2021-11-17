@@ -1023,10 +1023,10 @@ caniuse-lite@^1.0.30001202, caniuse-lite@^1.0.30001219, caniuse-lite@^1.0.300012
   resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001282.tgz#38c781ee0a90ccfe1fe7fefd00e43f5ffdcb96fd"
   integrity sha512-YhF/hG6nqBEllymSIjLtR2iWDDnChvhnVJqp+vloyt2tEHFG1yBR+ac2B/rOw0qOK0m0lEXU2dv4E/sMk5P9Kg==
 
-canvas-screenshot@^4.1.0:
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/canvas-screenshot/-/canvas-screenshot-4.1.0.tgz#0620a132417abeb92e8116aac1384a7623411314"
-  integrity sha512-Ex5m3nljIQIa03hsu5i9uhf2L02v4zHueOmChcPWImU7rG5f7+7NZim0hd7vCd3I8FQZL7WZSXrZk5xHHIXLSA==
+canvas-screenshot@3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/canvas-screenshot/-/canvas-screenshot-3.0.0.tgz#84ee63f8e9320f8f8dac7f3af52ac2baa35cd492"
+  integrity sha512-QSoSMo59uyLVaW2UYqthC44adKjpLlgzVQhS2LKHv57XISSbkF6oimHJe1UGMJZlGn7wZNZg0rhdIJ1eXGCwnw==
   dependencies:
     file-extension "^4.0.5"
 
