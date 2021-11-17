@@ -1,16 +1,17 @@
-import { useFrame } from '@react-three/fiber';
-import canvasScreenshot from 'canvas-screenshot';
-import { useSeedStore } from '../seed/store';
-import { useStore } from './store';
+import { useFrame } from '@react-three/fiber'
+// @ts-ignore
+import canvasScreenshot from 'canvas-screenshot'
+import { useSeedStore } from '../seed/store'
+import { useStore } from './store'
 
 export function FrameExporter({ prefix }: { prefix?: string }): null {
-    const clear = useStore((s) => s.clear);
+    const clear = useStore((s) => s.clear)
 
     // This loop is needed in case there are no
     // postprocessing effects
     useFrame(({ gl, scene, camera }) => {
-        gl.render(scene, camera);
-    }, 1);
+        gl.render(scene, camera)
+    }, 1)
 
     // If there are post processing effects, we
     // need to grab the screnshot after they've been
@@ -22,14 +23,14 @@ export function FrameExporter({ prefix }: { prefix?: string }): null {
             // ([prefix]-)?[seed].png
             const filename = `${prefix ? prefix + '-' : ''}${
                 useSeedStore.getState().seed
-            }.png`;
+            }.png`
 
             canvasScreenshot(gl.domElement, {
                 filename,
-            });
-            clear();
+            })
+            clear()
         }
-    }, 10);
+    }, 10)
 
-    return null;
+    return null
 }
