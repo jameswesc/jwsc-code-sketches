@@ -5,12 +5,6 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { styled } from 'stitches.config'
 
-const Title = styled(Inter, {
-    fontWeight: 900,
-    fontSize: '3rem',
-    color: amberDark.amber10,
-})
-
 const Main = styled('main', {
     bg: '$slate1',
     width: '100%',
