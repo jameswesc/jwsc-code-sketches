@@ -37,13 +37,16 @@ const Name = styled(P, {
 const UL = styled('ul', P)
 const LI = styled('ul', P)
 
-const A = styled(styled('a', P), { textDecoration: 'underline'})
+const A = styled(styled('a', P), { textDecoration: 'underline' })
 
 const Home: NextPage = () => {
     return (
         <div>
             <Head>
-                <title>james wesc | designer, creative developer and generative artist</title>
+                <title>
+                    james wesc | designer, creative developer and generative
+                    artist
+                </title>
                 <meta
                     name="description"
                     content="James Wesc is a designer, creative developer and generative artist mostly working with web technologies."
@@ -63,7 +66,7 @@ const Home: NextPage = () => {
                 </P>
                 <UL>
                     <LI>
-                        outputs ->{' '}
+                        outputs {`-> `}
                         <A
                             className="underline text-indigo-700 hover:text-pink-700"
                             href="https://www.instagram.com/james.wesc/"
@@ -73,7 +76,7 @@ const Home: NextPage = () => {
                         </A>
                     </LI>
                     <LI>
-                        process ->{' '}
+                        process {`-> `}
                         <A
                             className="underline text-indigo-700 hover:text-pink-700"
                             href="https://james-wesc.super.site/"
@@ -83,7 +86,7 @@ const Home: NextPage = () => {
                         </A>
                     </LI>
                     <LI>
-                        undefined ->{' '}
+                        undefined {`-> `}
                         <A
                             className="underline text-indigo-700 hover:text-pink-700"
                             href="https://twitter.com/james_wesc"
@@ -93,7 +96,7 @@ const Home: NextPage = () => {
                         </A>
                     </LI>
                     <LI>
-                        time-lapses ->{' '}
+                        time-lapses {`-> `}
                         <A
                             className="underline text-indigo-700 hover:text-pink-700"
                             href="https://www.youtube.com/channel/UC-5DynlFZsSLmFeX3IH1uDw"
@@ -103,7 +106,7 @@ const Home: NextPage = () => {
                         </A>
                     </LI>
                     <LI>
-                        code ->{' '}
+                        code {`-> `}
                         <A
                             className="underline text-indigo-700 hover:text-pink-700"
                             href="https://www.instagram.com/james.wesc/"
