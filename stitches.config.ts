@@ -1,14 +1,10 @@
-import { gray, indigo, pink, blackA, whiteA } from '@radix-ui/colors'
+import { blackA, whiteA } from '@radix-ui/colors'
 import { createStitches } from '@stitches/react'
 import type * as Stitches from '@stitches/react'
 
 export const { styled, globalCss, getCssText } = createStitches({
     theme: {
         colors: {
-            ...gray,
-            ...indigo,
-            ...pink,
-
             ...blackA,
             ...whiteA,
 
@@ -29,6 +25,7 @@ export const { styled, globalCss, getCssText } = createStitches({
         fonts: {
             supply: `'Supply', monospace`,
             objectSans: `'Object Sans', sans-serif`,
+            inter: `Inter var, Inter, sans-serif`,
         },
     },
     utils: {
@@ -42,6 +39,26 @@ export const { styled, globalCss, getCssText } = createStitches({
                 paddingTop: value,
                 paddingBottom: value,
                 paddingLeft: value,
+                paddingRight: value,
+            }
+        },
+        pt(value: Stitches.PropertyValue<'padding'>) {
+            return {
+                paddingTop: value,
+            }
+        },
+        pb(value: Stitches.PropertyValue<'padding'>) {
+            return {
+                paddingBottom: value,
+            }
+        },
+        pl(value: Stitches.PropertyValue<'padding'>) {
+            return {
+                paddingLeft: value,
+            }
+        },
+        pr(value: Stitches.PropertyValue<'padding'>) {
+            return {
                 paddingRight: value,
             }
         },
@@ -62,6 +79,26 @@ export const { styled, globalCss, getCssText } = createStitches({
                 marginTop: value,
                 marginBottom: value,
                 marginLeft: value,
+                marginRight: value,
+            }
+        },
+        mt(value: Stitches.PropertyValue<'margin'>) {
+            return {
+                marginTop: value,
+            }
+        },
+        mb(value: Stitches.PropertyValue<'margin'>) {
+            return {
+                marginBottom: value,
+            }
+        },
+        ml(value: Stitches.PropertyValue<'margin'>) {
+            return {
+                marginLeft: value,
+            }
+        },
+        mr(value: Stitches.PropertyValue<'margin'>) {
+            return {
                 marginRight: value,
             }
         },
