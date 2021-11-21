@@ -1,9 +1,25 @@
+import { amberDark } from '@radix-ui/colors'
 import { getDatabase, NOTION_DB_ID } from 'lib/notion'
 import { NextPage } from 'next'
+import { styled } from 'stitches.config'
 
-const Sketches: NextPage = (props) => {
+type NotionResponse = {
+    posts: any[]
+}
+
+const Pre = styled('pre', {
+    color: amberDark.amber12,
+})
+
+const Sketches: NextPage<NotionResponse> = ({ posts }) => {
     // console.log(props)
-    return <main></main>
+    return (
+        <main>
+            {posts.map((p, i) => (
+                <Pre key={i}>{JSON.stringify(p, null, 4)}</Pre>
+            ))}
+        </main>
+    )
 }
 
 export default Sketches
