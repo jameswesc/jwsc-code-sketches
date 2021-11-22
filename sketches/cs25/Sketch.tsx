@@ -115,6 +115,7 @@ export function Sketch() {
                 }}
             >
                 <color attach="background" args={[colors[5]]} />
+
                 <FrameExporter prefix="CS25" />
 
                 <IsometricRotation>
