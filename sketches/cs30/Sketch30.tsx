@@ -62,7 +62,10 @@ interface IBox {
     position: Vector3
     bounds: Vector3
     distance: number
+    withinItem?: boolean
 }
+
+// 6379912
 
 function generateBoxes(trials: number, rnd: IRandom, bounds: Vector3) {
     const rndPosition = () =>
@@ -77,11 +80,14 @@ function generateBoxes(trials: number, rnd: IRandom, bounds: Vector3) {
     for (let i = 0; i < trials; i++) {
         const position = rndPosition()
         const negPosition = new Vector3().sub(position)
-        let distance = sdfBox(negPosition, bounds),
-            withinItem = false
+        // The distance to the whole bounding box will always be negative
+        let distance = Math.abs(sdfBox(negPosition, bounds))
+        let withinItem = false
+        console.log({ distance })
 
         for (let box of boxes) {
             const d = sdfBox(negPosition, box.bounds)
+            console.log({ box, d, position })
             if (d < 0) {
                 withinItem = true
                 break
@@ -96,9 +102,12 @@ function generateBoxes(trials: number, rnd: IRandom, bounds: Vector3) {
                 position,
                 bounds: new Vector3(size, size, size),
                 distance,
+                withinItem,
             })
         }
     }
+
+    console.log(boxes)
 
     return boxes
 }
@@ -107,30 +116,35 @@ function Sketch() {
     const seed = useSeed()
     const rnd = new Smush32(seed)
 
-    // const colors = useSeededColorPalette()
+    const colors = useSeededColorPalette()
     const { trials } = useControls('Sketch 28', {
-        trials: 500,
+        trials: 100,
     })
 
     const boxes = generateBoxes(trials, rnd, boundsVector)
 
     return (
         <group>
+            <Box args={[BOUNDS * 2, BOUNDS * 2, BOUNDS * 2, 4, 4, 4]}>
+                <meshBasicMaterial wireframe color="#fff" />
+            </Box>
             {boxes.map((box, i) => (
                 <group key={i}>
-                    {/* <Sphere args={[box.distance, 16]} position={box.position}>
-                        <meshBasicMaterial
-                            color="#0f0"
-                            transparent
-                            opacity={0.3}
-                            wireframe
-                        />
-                    </Sphere> */}
-                    <Box position={box.position} scale={box.bounds}>
-                        <meshBasicMaterial
+                    <Box
+                        position={box.position}
+                        scale={box.bounds}
+                        onClick={() => console.log(box)}
+                    >
+                        <meshStandardMaterial
                             color={colors[1 + (i % (colors.length - 1))]}
                         />
                     </Box>
+                    <Sphere args={[box.distance]} position={box.position}>
+                        <meshBasicMaterial
+                            color={colors[1 + (i % (colors.length - 1))]}
+                            wireframe
+                        />
+                    </Sphere>
                 </group>
             ))}
         </group>
@@ -138,6 +152,8 @@ function Sketch() {
 }
 
 function SketchCanvas() {
+    const colors = useSeededColorPalette()
+
     return (
         <SketchSize>
             <Canvas
@@ -153,7 +169,7 @@ function SketchCanvas() {
             >
                 <color attach="background" args={[colors[0]]} />
 
-                <FrameExporter prefix="CS29" />
+                <FrameExporter prefix="CS30" />
 
                 <Suspense fallback={null}>
                     <Environment preset="forest" />

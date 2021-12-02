@@ -51,7 +51,7 @@ function SketchCanvas() {
             >
                 <color attach="background" args={[colors[0]]} />
 
-                <FrameExporter prefix="CS27" />
+                <FrameExporter prefix="CS28" />
 
                 <IsometricRotation>
                     <Sketch />
