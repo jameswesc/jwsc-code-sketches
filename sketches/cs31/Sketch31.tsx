@@ -159,7 +159,7 @@ function SketchCanvas() {
             >
                 <color attach="background" args={[colors[0]]} />
 
-                <FrameExporter prefix="CS30" />
+                <FrameExporter prefix="CS31" />
 
                 <Suspense fallback={null}>
                     <Environment preset="dawn" />
