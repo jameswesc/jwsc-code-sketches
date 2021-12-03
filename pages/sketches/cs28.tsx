@@ -8,7 +8,7 @@ const Home: NextPage = () => {
     return (
         <div>
             <Head>
-                <title>CS26 | James Wesc</title>
+                <title>CS28 | James Wesc</title>
                 <meta
                     name="description"
                     content="CS28 - A Generative Art and Code Sketches by James Wesc."

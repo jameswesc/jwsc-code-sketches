@@ -2,16 +2,16 @@ import { SketchLayout } from 'components/SketchLayout'
 import { Leva } from 'leva'
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import Sketch from 'sketches/cs30'
+import Sketch from 'sketches/cs32'
 
 const Home: NextPage = () => {
     return (
         <div>
             <Head>
-                <title>CS30 | James Wesc</title>
+                <title>CS32 | James Wesc</title>
                 <meta
                     name="description"
-                    content="CS30 - A Generative Art and Code Sketches by James Wesc."
+                    content="CS31 - A Generative Art and Code Sketches by James Wesc."
                 />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
