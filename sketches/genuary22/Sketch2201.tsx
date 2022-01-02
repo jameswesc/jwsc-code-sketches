@@ -199,18 +199,30 @@ function Sketch() {
         material.current.t = Math.sin(t * 2 * Math.PI)
     })
 
+    const { size, color1Index, color2Index } = useControls('Points', {
+        size: 3,
+        color1Index: {
+            value: 1,
+            options: [1, 2, 3, 4],
+        },
+        color2Index: {
+            value: 2,
+            options: [1, 2, 3, 4],
+        },
+    })
+
     return (
         <group ref={group}>
             <points geometry={data.geometry}>
                 <customPointsMaterial
                     ref={material}
-                    color1={colors[2]}
-                    color2={colors[3]}
-                    t={0.5}
+                    color1={colors[color1Index]}
+                    color2={colors[color2Index]}
+                    t={0}
                     transparent
                     depthTest={false}
                     depthWrite={false}
-                    size={3}
+                    size={size}
                     blending={AdditiveBlending}
                 />
             </points>
