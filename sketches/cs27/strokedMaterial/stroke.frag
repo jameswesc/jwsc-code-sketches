@@ -1,5 +1,5 @@
 
-uniform vec2 size;
+uniform vec3 size;
 varying vec2 vSize;
 
 

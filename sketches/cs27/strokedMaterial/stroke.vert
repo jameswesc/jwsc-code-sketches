@@ -5,11 +5,11 @@
 // attribute vec3 position;
 
 varying vec2 vSize;
-uniform vec2 size;
+uniform vec3 size;
 
 
 void main() {
     gl_Position = projectionMatrix * viewMatrix * modelMatrix * vec4(position, 1.0);
 
-    vSize = uv * size;
+    vSize = uv * size.xy;
 }
