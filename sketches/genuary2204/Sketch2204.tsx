@@ -268,7 +268,7 @@ export function Sketch2204() {
             >
                 <color attach="background" args={[colors[0]]} />
 
-                <FrameExporter prefix="G2201" />
+                <FrameExporter prefix="G2204" />
 
                 <Suspense fallback={null}>
                     <Environment preset="dawn" />
